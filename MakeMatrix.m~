@@ -1,0 +1,35 @@
+%Make Matrix
+figure
+scatter3(Tracks(:,1), Tracks(:,2), Tracks(:, 7), Tracks(:,3), Tracks(:,6));
+
+SeedNumbersAndCoordinates = [];
+
+row = 1;
+runnning = 1;
+
+while 1
+  disp('Choose your track by clicking.')
+  disp('Be careful because your clicks are recorded...')
+  
+  [x,y] = getpts;
+  trackNum = input('Track Number? (enter X to disregard cli)');
+  if trackNum == 'X'
+      
+  end
+  
+  SeedNumbersAndCoordinates(row,1) = input('Track Number?');
+  SeedNumbersAndCoordinates(row,2) = x;
+  SeedNumbersAndCoordinates(row,3) = y;
+  
+  GoOn = input('Are you done? If so, enter ''Q''');
+  
+  if GoOn == 'Q'
+    break
+  end
+  
+  row = row + 1;
+  
+end
+
+clear row
+cler running
